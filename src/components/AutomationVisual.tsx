@@ -131,7 +131,7 @@ export default function AutomationVisual() {
 
   return (
     <div className="relative w-full rounded-2xl border border-[var(--border)] bg-gradient-to-br from-slate-50 to-indigo-50/50 overflow-hidden"
-         style={{ aspectRatio: "16/7" }}>
+         style={{ aspectRatio: "16/9" }}>
       {/* Canvas for animated connections */}
       <canvas
         ref={canvasRef}
