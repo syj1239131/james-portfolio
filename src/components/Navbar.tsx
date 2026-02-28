@@ -53,7 +53,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/Hsieh Yu Jie_James_Resume_2026.pdf"
+            href={t.navbar.resumeUrl}
             download
             className="text-sm px-4 py-2 rounded-full border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-200 inline-flex items-center gap-1.5"
           >

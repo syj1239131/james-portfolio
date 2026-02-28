@@ -24,6 +24,7 @@ export const translations = {
       contact: "聯絡我",
     },
     resumeButton: "履歷",
+    resumeUrl: "/謝宇傑履歷_2026.pdf",
     ctaButton: "與我聯絡",
   },
 

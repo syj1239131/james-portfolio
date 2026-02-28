@@ -62,7 +62,7 @@ export default function Hero() {
             {t.hero.viewWorkButton}
           </a>
           <a
-            href="/Hsieh Yu Jie_James_Resume_2026.pdf"
+            href={t.navbar.resumeUrl}
             download
             className="w-full sm:w-auto px-6 py-3 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-200 inline-flex items-center justify-center gap-2"
           >

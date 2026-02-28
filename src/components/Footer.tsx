@@ -41,14 +41,6 @@ export default function Footer() {
             >
               {t.footer.emailLink}
             </a>
-            <a
-              href="https://www.linkedin.com/in/%E5%AE%87%E5%82%91-%E8%AC%9D-8a15ba168/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-            >
-              {t.footer.linkedinLink}
-            </a>
           </div>
         </div>
       </div>

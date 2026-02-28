@@ -24,6 +24,7 @@ export const translations = {
       contact: "Contact",
     },
     resumeButton: "Resume",
+    resumeUrl: "/Hsieh Yu Jie_James_Resume_2026.pdf",
     ctaButton: "Get in Touch",
   },
 
