@@ -40,7 +40,7 @@ export const translations = {
       "內容建構師",
       "數據驅動思考者",
     ],
-    subtitle: "擁有 5 年以上經驗，專注於打造數據驅動、能帶來實質成效的行銷策略。擅長 SEO、成長行銷（Growth Marketing），以及跨越 B2B 與 B2C 領域的跨部門整合執行。",
+    subtitle: "擁有近 7 年經驗，專注於打造數據驅動、能帶來實質成效的行銷策略。擅長 SEO、成長行銷（Growth Marketing），以及跨越 B2B 與 B2C 領域的跨部門整合執行。",
     viewWorkButton: "查看作品",
     downloadResumeButton: "下載履歷",
     contactButton: "聯絡我",

@@ -40,7 +40,7 @@ export const translations = {
       "Content Architect",
       "Data-Driven Thinker",
     ],
-    subtitle: "5+ years crafting data-driven marketing strategies that deliver real results. Specializing in SEO, growth marketing, and cross-functional execution across B2B and B2C landscapes.",
+    subtitle: "7 years crafting data-driven marketing strategies that deliver real results. Specializing in SEO, growth marketing, and cross-functional execution across B2B and B2C landscapes.",
     viewWorkButton: "View My Work",
     downloadResumeButton: "Download Resume",
     contactButton: "Contact Me",
