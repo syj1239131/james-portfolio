@@ -215,53 +215,7 @@ export const projects: ProjectData[] = [
     ],
   },
 
-  // #5 — RSMedia (swapped from #6)
-  {
-    slug: "rsmedia",
-    tag: "SEO / Independent Project",
-    title: "Independent News Platform",
-    company: "Independent Project",
-    description:
-      "I built and ran a Mandarin news site from scratch as a side project. Got Bing News publisher certification, published 1,200+ articles in 9 months, and hit 1.8M Bing impressions.",
-    metrics: [
-      { value: "1.8M", label: "Bing Impressions" },
-      { value: "61.4K", label: "Organic Clicks" },
-      { value: "1,200+", label: "Articles Published" },
-    ],
-    link: null,
-    heroColor: "from-purple-500/20 to-pink-500/20",
-    role: "Project Lead & Operator",
-    period: "Independent Project",
-    sections: [
-      {
-        title: "Situation",
-        content: [
-          "I wanted to test whether I could build a functioning digital news operation from zero: the site, the editorial process, the SEO, and the growth strategy.",
-          "The main challenge was getting a brand-new domain to rank in a media market dominated by established outlets, all while running everything solo.",
-        ],
-      },
-      {
-        title: "Action",
-        content: [
-          "I built the site on WordPress with custom configuration, schema markup, and performance tuning.",
-          "I set up a modular editorial process that could produce keyword-targeted articles at scale. Published 1,200+ articles in nine months.",
-          "I focused early Google Search efforts on specific topic clusters and long-tail keywords. Later, I applied for and secured Bing News publisher certification to open up a second traffic channel.",
-        ],
-        imageUrl: "/rsmedia-ga-dashboard.png",
-      },
-      {
-        title: "Result",
-        content: [
-          "Google Search: 52.6K clicks, 476K impressions in the early growth phase.",
-          "Bing News: 61.4K clicks, 1.8M impressions after publisher certification.",
-          "Proved that a solo operator can build a viable content operation with the right systems in place.",
-        ],
-        imageUrl: "/rsmedia-bing-dashboard.png",
-      },
-    ],
-  },
-
-  // #6 — Marketing Automation / Technical Toolkit (swapped from #5, appendix-style)
+  // #5 — Marketing Automation / Technical Toolkit
   {
     slug: "marketing-automation",
     tag: "Technical Marketing",
@@ -309,6 +263,52 @@ export const projects: ProjectData[] = [
           "WordPress: End-to-end site builds with schema markup and performance optimization.",
           "Marketing Automation: Integrated email platforms, CRM systems, and analytics tools into automated workflows.",
         ],
+      },
+    ],
+  },
+
+  // #6 — RSMedia
+  {
+    slug: "rsmedia",
+    tag: "SEO / Independent Project",
+    title: "Independent News Platform",
+    company: "Independent Project",
+    description:
+      "I co-founded a Mandarin news site with a small team. We earned Bing News publisher certification, published 1,200+ articles in 9 months, and hit 1.8M Bing impressions.",
+    metrics: [
+      { value: "1.8M", label: "Bing Impressions" },
+      { value: "61.4K", label: "Organic Clicks" },
+      { value: "1,200+", label: "Articles Published" },
+    ],
+    link: null,
+    heroColor: "from-purple-500/20 to-pink-500/20",
+    role: "Co-Founder & Lead Operator",
+    period: "Independent Project",
+    sections: [
+      {
+        title: "Situation",
+        content: [
+          "I wanted to test whether a lean founding team could build a functioning digital news operation from zero: the site, the editorial process, the SEO, and the growth strategy.",
+          "The main challenge was getting a brand-new domain to rank in a media market dominated by established outlets — with a bootstrapped team of two to three people.",
+        ],
+      },
+      {
+        title: "Action",
+        content: [
+          "I built the site on WordPress with custom configuration, schema markup, and performance tuning.",
+          "I set up a modular editorial process that could produce keyword-targeted articles at scale. Published 1,200+ articles in nine months.",
+          "I focused early Google Search efforts on specific topic clusters and long-tail keywords. Later, I applied for and secured Bing News publisher certification to open up a second traffic channel.",
+        ],
+        imageUrl: "/rsmedia-ga-dashboard.png",
+      },
+      {
+        title: "Result",
+        content: [
+          "Google Search: 52.6K clicks, 476K impressions in the early growth phase.",
+          "Bing News: 61.4K clicks, 1.8M impressions after publisher certification.",
+          "Proved that a lean, bootstrapped team can build a viable content operation with the right systems and processes in place.",
+        ],
+        imageUrl: "/rsmedia-bing-dashboard.png",
       },
     ],
   },

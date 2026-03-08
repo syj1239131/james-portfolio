@@ -86,6 +86,7 @@ export const translations = {
     sectionLabel: "Selected Work",
     sectionTitle: "Projects & Case Studies",
     viewCaseStudy: "View Case Study",
+    secondaryLabel: "Side Projects & Technical Work",
   },
 
   // ==========================================
@@ -387,7 +388,7 @@ export const translations = {
       tag: "SEO / Independent Project",
       title: "Independent News Platform",
       company: "Independent Project",
-      description: "I built and ran a Mandarin news site from scratch as a side project. Got Bing News publisher certification, published 1,200+ articles in 9 months, and hit 1.8M Bing impressions.",
+      description: "I co-founded a Mandarin news site with a small team. We earned Bing News publisher certification, published 1,200+ articles in 9 months, and hit 1.8M Bing impressions.",
       metrics: [
         { value: "1.8M", label: "Bing Impressions" },
         { value: "61.4K", label: "Organic Clicks" },
@@ -399,8 +400,8 @@ export const translations = {
         {
           title: "Situation",
           content: [
-            "I wanted to test whether I could build a functioning digital news operation from zero: the site, the editorial process, the SEO, and the growth strategy.",
-            "The main challenge was getting a brand-new domain to rank in a media market dominated by established outlets, all while running everything solo.",
+            "I wanted to test whether a lean founding team could build a functioning digital news operation from zero: the site, the editorial process, the SEO, and the growth strategy.",
+            "The main challenge was getting a brand-new domain to rank in a media market dominated by established outlets — with a bootstrapped team of two to three people.",
           ],
         },
         {
@@ -416,7 +417,7 @@ export const translations = {
           content: [
             "Google Search: 52.6K clicks, 476K impressions in the early growth phase.",
             "Bing News: 61.4K clicks, 1.8M impressions after publisher certification.",
-            "Proved that a solo operator can build a viable content operation with the right systems in place.",
+            "Proved that a lean, bootstrapped team can build a viable content operation with the right systems and processes in place.",
           ],
         },
       ],

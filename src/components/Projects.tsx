@@ -9,6 +9,9 @@ export default function Projects() {
   const projectList = useProjectList();
   const sectionRef = useRef<HTMLElement>(null);
 
+  const mainProjects = projectList.slice(0, 4);
+  const secondaryProjects = projectList.slice(4);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,9 +46,9 @@ export default function Projects() {
           </h2>
         </div>
 
-        {/* Cards Grid */}
+        {/* Main Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projectList.map((project, i) => (
+          {mainProjects.map((project, i) => (
             <Link
               href={`/projects/${project.slug}`}
               key={i}
@@ -101,6 +104,73 @@ export default function Projects() {
             </Link>
           ))}
         </div>
+
+        {/* Secondary Projects Divider */}
+        {secondaryProjects.length > 0 && (
+          <>
+            <div className="fade-in-up flex items-center gap-4 mt-14 mb-8">
+              <div className="flex-1 border-t border-dashed border-[var(--border)]" />
+              <span className="text-xs tracking-widest uppercase text-[var(--muted)] whitespace-nowrap">
+                {t.projects.secondaryLabel}
+              </span>
+              <div className="flex-1 border-t border-dashed border-[var(--border)]" />
+            </div>
+
+            {/* Secondary Projects Grid — compact cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {secondaryProjects.map((project, i) => (
+                <Link
+                  href={`/projects/${project.slug}`}
+                  key={i}
+                  className="fade-in-up card-hover rounded-xl border border-dashed border-[var(--border)] bg-[var(--background)] p-5 flex flex-col group cursor-pointer opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  {/* Tag */}
+                  <span className="text-[10px] font-medium tracking-wide uppercase text-[var(--muted)] mb-2">
+                    {project.tag}
+                  </span>
+
+                  {/* Title */}
+                  <h3
+                    className="text-base font-semibold mb-1 tracking-tight group-hover:text-[var(--accent)] transition-colors"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {project.title}
+                  </h3>
+
+                  {/* Company */}
+                  <p className="text-xs text-[var(--muted)] mb-3">
+                    {project.company}
+                  </p>
+
+                  {/* Compact Metrics */}
+                  <div className="flex flex-wrap gap-4 mb-3">
+                    {project.metrics.map((m, j) => (
+                      <div key={j} className="text-center">
+                        <p
+                          className="text-lg font-bold text-[var(--foreground)]"
+                          style={{ fontFamily: "var(--font-heading)" }}
+                        >
+                          {m.value}
+                        </p>
+                        <p className="text-[10px] text-[var(--muted)] mt-0.5">
+                          {m.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <span className="text-xs text-[var(--accent)] mt-1 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {t.projects.viewCaseStudy}
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
