@@ -18,9 +18,9 @@ export const translations = {
   navbar: {
     logo: "James Hsieh", // [KEEP] — 改成中文名「謝宇傑」
     links: {
-      about: "About",
-      projects: "Projects",
       experience: "Experience",
+      projects: "Projects",
+      about: "About",
       contact: "Contact",
     },
     resumeButton: "Resume",
@@ -39,7 +39,7 @@ export const translations = {
       "SEO Strategist",
       "Marketing Technologist",
     ],
-    subtitle: "I grow businesses through SEO and data-driven marketing. I also write Python scripts, build web apps, and automate workflows — because waiting for someone else to build my tools was never an option.",
+    subtitle: "7 years in SEO, growth marketing, and B2B inbound. I also happen to code — Python, React, and whatever else gets the job done faster.",
     viewWorkButton: "View My Work",
     downloadResumeButton: "Download Resume",
     contactButton: "Contact Me",
@@ -51,26 +51,32 @@ export const translations = {
   skills: {
     sectionLabel: "What I Bring",
     sectionTitle: "Skills & Expertise",
-    coreSkills: [
-      "SEO Strategy (Technical + Content)",
-      "B2B Inbound Marketing",
-      "Growth Marketing",
-      "Content Strategy & Editorial",
-      "Data Analytics (GA4 / GSC)",
-      "Python Automation & ETL",
-      "AI Workflow Automation",
-      "React / Next.js / TypeScript",
-    ],
-    secondaryLabel: "Also experienced in",
-    secondarySkills: [
-      "LinkedIn B2B",
-      "Email Marketing",
-      "Social Media",
-      "Brand Positioning",
-      "A/B Testing",
-      "WordPress",
-      "O2O Campaigns",
-      "Digital Advertising",
+    subtitle: "7 years in marketing · builds his own tools",
+    cards: [
+      {
+        badge: "Growth & SEO",
+        color: "emerald",
+        oneLiner: "Organic acquisition, technical SEO, content that compounds",
+        tags: ["Technical SEO", "Content SEO & EEAT", "Keyword & Competitive Analysis", "International SEO (EN/ZH)", "GA4", "Google Search Console", "A/B Testing & CRO"],
+      },
+      {
+        badge: "B2B & Lead Gen",
+        color: "blue",
+        oneLiner: "Inbound marketing, LinkedIn thought leadership, lead nurture",
+        tags: ["B2B Inbound Marketing", "LinkedIn B2B", "Email Marketing (EDM)", "Lead Nurturing", "Marketing Automation"],
+      },
+      {
+        badge: "Social & Brand",
+        color: "amber",
+        oneLiner: "Community campaigns, IP storytelling, cross-platform execution",
+        tags: ["Social Media (Meta, IG, LinkedIn)", "IP & Community Marketing", "Brand Positioning", "Content Strategy & Editorial", "O2O Campaigns", "Digital Advertising"],
+      },
+      {
+        badge: "MarTech & Code",
+        color: "violet",
+        oneLiner: "Python, React/Next.js — I build what I need, not just brief it",
+        tags: ["Python", "React / Next.js / TypeScript", "AI / LLM Workflows", "WordPress", "ETL & Data Pipelines", "Automation Scripts"],
+      },
     ],
   },
 

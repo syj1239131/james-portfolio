@@ -9,9 +9,9 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: t.navbar.links.about, href: "#about" },
-    { label: t.navbar.links.projects, href: "#projects" },
     { label: t.navbar.links.experience, href: "#experience" },
+    { label: t.navbar.links.projects, href: "#projects" },
+    { label: t.navbar.links.about, href: "#about" },
     { label: t.navbar.links.contact, href: "#contact" },
   ];
 

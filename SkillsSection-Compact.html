@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skills Section — Compact</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --card-bg: rgba(255,255,255,0.025);
+    --card-border: rgba(255,255,255,0.06);
+    --card-hover: rgba(255,255,255,0.05);
+    --card-border-hover: rgba(255,255,255,0.13);
+    --text-1: #ededf0;
+    --text-2: #8b8b94;
+    --text-3: #5a5a63;
+    --divider: rgba(255,255,255,0.05);
+    --tag-bg: rgba(255,255,255,0.035);
+    --tag-border: rgba(255,255,255,0.05);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Outfit', -apple-system, sans-serif;
+    background: var(--bg); color: var(--text-1);
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+  }
+
+  /* Header — tight */
+  .header {
+    margin-bottom: 24px;
+  }
+  .header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .header p {
+    font-size: 13px;
+    color: var(--text-2);
+  }
+
+  /* Grid: 2 cols */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  /* Card */
+  .card {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.23,1,0.32,1);
+  }
+  .card:hover {
+    border-color: var(--card-border-hover);
+    background: var(--card-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Top glow line */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .card:hover::before { opacity: 0.5; }
+
+  .card.c-emerald::before { background: linear-gradient(to right, #10b981, #2dd4bf); }
+  .card.c-blue::before   { background: linear-gradient(to right, #3b82f6, #818cf8); }
+  .card.c-amber::before  { background: linear-gradient(to right, #f59e0b, #fb923c); }
+  .card.c-violet::before { background: linear-gradient(to right, #8b5cf6, #a855f7); }
+
+  .card-inner {
+    padding: 16px 18px;
+  }
+
+  /* Card top row */
+  .card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 6px;
+    border: 1px solid;
+  }
+  .c-emerald .badge { background: rgba(16,185,129,0.08); color: #34d399; border-color: rgba(16,185,129,0.15); }
+  .c-blue .badge    { background: rgba(59,130,246,0.08); color: #60a5fa; border-color: rgba(59,130,246,0.15); }
+  .c-amber .badge   { background: rgba(245,158,11,0.08); color: #fbbf24; border-color: rgba(245,158,11,0.15); }
+  .c-violet .badge  { background: rgba(139,92,246,0.08); color: #a78bfa; border-color: rgba(139,92,246,0.15); }
+
+  /* Plus icon */
+  .plus {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), border-color 0.3s;
+    flex-shrink: 0;
+  }
+  .plus svg {
+    width: 10px; height: 10px;
+    stroke: var(--text-3); stroke-width: 2; fill: none;
+  }
+  .card:hover .plus { border-color: var(--card-border-hover); }
+  .card.open .plus { transform: rotate(45deg); }
+
+  /* One-liner */
+  .card-line {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-1);
+    line-height: 1.35;
+  }
+
+  /* Expand area */
+  .card-expand {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.23,1,0.32,1);
+  }
+  .card.open .card-expand {
+    grid-template-rows: 1fr;
+  }
+  .card-expand-inner {
+    overflow: hidden;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid var(--divider);
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 450;
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    color: var(--text-2);
+    white-space: nowrap;
+  }
+
+  /* Theme toggle */
+  .theme-btn {
+    position: fixed; top: 16px; right: 16px; z-index: 99;
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 13px; color: var(--text-2);
+    backdrop-filter: blur(8px); transition: all 0.2s;
+  }
+  .theme-btn:hover { background: rgba(255,255,255,0.08); }
+
+  /* Light */
+  html.light {
+    --bg: #f6f6f8;
+    --card-bg: rgba(255,255,255,0.65);
+    --card-border: rgba(0,0,0,0.06);
+    --card-hover: rgba(255,255,255,0.85);
+    --card-border-hover: rgba(0,0,0,0.12);
+    --text-1: #1a1a1e;
+    --text-2: #62626a;
+    --text-3: #a0a0a8;
+    --divider: rgba(0,0,0,0.06);
+    --tag-bg: rgba(0,0,0,0.03);
+    --tag-border: rgba(0,0,0,0.06);
+  }
+  html.light .theme-btn {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.07);
+  }
+  html.light .theme-btn:hover { background: rgba(0,0,0,0.06); }
+
+  /* Entry anim */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(12px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  .card { animation: fadeUp 0.45s cubic-bezier(0.23,1,0.32,1) both; }
+  .card:nth-child(1) { animation-delay: 0ms; }
+  .card:nth-child(2) { animation-delay: 60ms; }
+  .card:nth-child(3) { animation-delay: 120ms; }
+  .card:nth-child(4) { animation-delay: 180ms; }
+</style>
+</head>
+<body>
+
+<button class="theme-btn" onclick="document.documentElement.classList.toggle('dark');document.documentElement.classList.toggle('light')">☀</button>
+
+<div class="wrap">
+
+  <div class="header">
+    <h2>Skills & Expertise</h2>
+    <p>7 years full-stack marketing · also writes code</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card c-emerald" data-row="top" onclick="toggleRow(this)">
+      <div class="card-inner">
+        <div class="card-row">
+          <span class="badge">Growth & SEO</span>
+          <span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="card-line">Organic acquisition · Technical SEO · Content that compounds</div>
+        <div class="card-expand"><div class="card-expand-inner">
+          <div class="tags">
+            <span class="tag">Technical SEO</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Keyword Clustering</span>
+            <span class="tag">GA4 / GSC / Ahrefs</span>
+            <span class="tag">CRO & A/B Testing</span>
+            <span class="tag">Programmatic SEO</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="card c-blue" data-row="top" onclick="toggleRow(this)">
+      <div class="card-inner">
+        <div class="card-row">
+          <span class="badge">B2B Inbound</span>
+          <span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="card-line">Lead gen · Nurture flows · Pipeline over pageviews</div>
+        <div class="card-expand"><div class="card-expand-inner">
+          <div class="tags">
+            <span class="tag">Lead Gen Strategy</span>
+            <span class="tag">HubSpot / Marketo</span>
+            <span class="tag">Email Sequences</span>
+            <span class="tag">Sales Enablement</span>
+            <span class="tag">Marketing Automation</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="card c-amber" data-row="bottom" onclick="toggleRow(this)">
+      <div class="card-inner">
+        <div class="card-row">
+          <span class="badge">Content & Brand</span>
+          <span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="card-line">Positioning · Editorial strategy · Social & copy</div>
+        <div class="card-expand"><div class="card-expand-inner">
+          <div class="tags">
+            <span class="tag">Brand Positioning</span>
+            <span class="tag">Editorial Calendars</span>
+            <span class="tag">Copywriting</span>
+            <span class="tag">Social Media</span>
+            <span class="tag">Content Production</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="card c-violet" data-row="bottom" onclick="toggleRow(this)">
+      <div class="card-inner">
+        <div class="card-row">
+          <span class="badge">Code</span>
+          <span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="card-line">Python · React / Next.js · I build, not just brief</div>
+        <div class="card-expand"><div class="card-expand-inner">
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">React / Next.js</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Automation Scripts</span>
+            <span class="tag">Data Pipelines</span>
+            <span class="tag">AI / LLM Tools</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleRow(card) {
+  const row = card.dataset.row;
+  const siblings = document.querySelectorAll(`.card[data-row="${row}"]`);
+  const wasOpen = card.classList.contains('open');
+
+  // close everything first
+  document.querySelectorAll('.card.open').forEach(c => c.classList.remove('open'));
+
+  // if this row wasn't open, open the whole row
+  if (!wasOpen) siblings.forEach(c => c.classList.add('open'));
+}
+</script>
+
+</body>
+</html>
