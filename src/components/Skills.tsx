@@ -37,34 +37,35 @@ export default function Skills() {
           </h2>
         </div>
 
-        {/* Skill Groups — clean 2x2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {t.skills.groups.map((group, i) => (
-            <div
-              key={i}
-              className="fade-in-up rounded-2xl border border-[var(--border)] bg-white p-6"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">{group.icon}</span>
-                <h3
-                  className="text-lg font-semibold"
-                  style={{ fontFamily: "var(--font-heading)" }}
-                >
-                  {group.label}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill, j) => (
-                  <span
-                    key={j}
-                    className="px-3 py-1.5 text-xs font-medium rounded-full bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors duration-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        {/* Core Skills */}
+        <div className="fade-in-up mb-10">
+          <div className="flex flex-wrap gap-3">
+            {t.skills.coreSkills.map((skill: string, i: number) => (
+              <span
+                key={i}
+                className="px-4 py-2 text-sm font-medium rounded-full bg-white border-2 border-[var(--accent)]/30 text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-200"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Secondary Skills — tag cloud */}
+        <div className="fade-in-up">
+          <p className="text-xs tracking-widest uppercase text-[var(--muted)] mb-3">
+            {t.skills.secondaryLabel}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {t.skills.secondarySkills.map((skill: string, j: number) => (
+              <span
+                key={j}
+                className="px-3 py-1 text-xs rounded-full bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors duration-200"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
