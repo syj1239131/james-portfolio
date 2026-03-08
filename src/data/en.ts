@@ -51,19 +51,18 @@ export const translations = {
   skills: {
     sectionLabel: "What I Bring",
     sectionTitle: "Skills & Expertise",
-    subtitle: "7 years in marketing · builds his own tools",
     cards: [
-      {
-        badge: "Growth & SEO",
-        color: "emerald",
-        oneLiner: "Organic acquisition, technical SEO, content that compounds",
-        tags: ["Technical SEO", "Content SEO & EEAT", "Keyword & Competitive Analysis", "International SEO (EN/ZH)", "GA4", "Google Search Console", "A/B Testing & CRO"],
-      },
       {
         badge: "B2B & Lead Gen",
         color: "blue",
         oneLiner: "Inbound marketing, LinkedIn thought leadership, lead nurture",
         tags: ["B2B Inbound Marketing", "LinkedIn B2B", "Email Marketing (EDM)", "Lead Nurturing", "Marketing Automation"],
+      },
+      {
+        badge: "Growth & SEO",
+        color: "emerald",
+        oneLiner: "Organic acquisition, technical SEO, content that compounds",
+        tags: ["Technical SEO", "Content SEO & EEAT", "Keyword & Competitive Analysis", "International SEO (EN/ZH)", "GA4", "Google Search Console", "A/B Testing & CRO"],
       },
       {
         badge: "Social & Brand",

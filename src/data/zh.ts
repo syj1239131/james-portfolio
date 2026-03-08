@@ -52,19 +52,18 @@ export const translations = {
   skills: {
     sectionLabel: "專業能力",
     sectionTitle: "技能與專長",
-    subtitle: "7 年行銷經驗 · 自己寫工具",
     cards: [
-      {
-        badge: "Growth & SEO",
-        color: "emerald",
-        oneLiner: "自然流量獲取、技術 SEO、可持續累積的內容策略",
-        tags: ["技術 SEO", "內容 SEO & EEAT", "關鍵字與競品分析", "跨國 SEO (中/英)", "GA4", "Google Search Console", "A/B 測試與 CRO"],
-      },
       {
         badge: "B2B & Lead Gen",
         color: "blue",
         oneLiner: "集客式行銷、LinkedIn 經營、潛在客戶培育",
         tags: ["B2B 集客式行銷", "LinkedIn B2B", "EDM 行銷", "潛在客戶培育", "行銷自動化"],
+      },
+      {
+        badge: "Growth & SEO",
+        color: "emerald",
+        oneLiner: "自然流量獲取、技術 SEO、可持續累積的內容策略",
+        tags: ["技術 SEO", "內容 SEO & EEAT", "關鍵字與競品分析", "跨國 SEO (中/英)", "GA4", "Google Search Console", "A/B 測試與 CRO"],
       },
       {
         badge: "Social & Brand",

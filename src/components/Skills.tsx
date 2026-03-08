@@ -61,14 +61,11 @@ export default function Skills() {
         {/* Header */}
         <div className="fade-in-up mb-6">
           <h2
-            className="text-xl font-semibold tracking-tight mb-1"
+            className="text-xl font-semibold tracking-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t.skills.sectionTitle}
           </h2>
-          <p className="text-sm text-[var(--muted)]">
-            {t.skills.subtitle}
-          </p>
         </div>
 
         {/* 2×2 Card Grid */}
