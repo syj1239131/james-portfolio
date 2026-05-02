@@ -8,7 +8,7 @@ import B2BLeadGenVisual from "@/components/B2BLeadGenVisual";
 
 export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>();
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   const project = useProjectData(slug);
 
   if (!project) {
@@ -22,11 +22,11 @@ export default function ProjectPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Back nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[var(--border)]">
-        <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-white/95 backdrop-blur-md">
+        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
             href="/#projects"
-            className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors flex items-center gap-2"
+            className="flex items-center gap-2 text-sm font-medium text-[var(--foreground)] underline-offset-4 hover:underline"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -34,7 +34,7 @@ export default function ProjectPage() {
             {t.projectDetail.backToPortfolio}
           </Link>
           <span
-            className="text-sm font-medium"
+            className="text-sm font-semibold"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t.navbar.logo}
@@ -43,18 +43,18 @@ export default function ProjectPage() {
       </nav>
 
       {/* Hero */}
-      <section className={`pt-28 pb-16 px-6 bg-gradient-to-br ${project.heroColor}`}>
+      <section className="border-b border-[var(--border)] bg-white px-6 pt-32 pb-20">
         <div className="max-w-4xl mx-auto">
-          <span className="text-xs font-medium tracking-widest uppercase text-[var(--accent)] mb-3 block">
+          <span className="mb-3 block text-[13px] font-medium uppercase text-[var(--muted)]">
             {project.tag}
           </span>
           <h1
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
+            className="mb-5 text-3xl font-semibold leading-[1.12] md:text-5xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {project.title}
           </h1>
-          <p className="text-lg text-[var(--muted)] max-w-2xl mb-6">
+          <p className="mb-8 max-w-2xl text-[17px] leading-relaxed text-[var(--muted)]">
             {project.description}
           </p>
 
@@ -81,11 +81,11 @@ export default function ProjectPage() {
           </div>
 
           {/* Metrics bar */}
-          <div className="flex flex-wrap gap-10 mt-10 pt-8 border-t border-black/10">
+          <div className="mt-10 flex flex-wrap gap-10 border-t border-[var(--border)] pt-8">
             {project.metrics.map((m, i) => (
               <div key={i}>
                 <p
-                  className="text-3xl font-bold"
+                  className="text-3xl font-semibold"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {m.value}
@@ -98,12 +98,12 @@ export default function ProjectPage() {
       </section>
 
       {/* Content sections */}
-      <article className="py-16 px-6">
+      <article className="px-6 py-20">
         <div className="max-w-4xl mx-auto space-y-16">
           {project.sections.map((section, i) => (
             <section key={i}>
               <h2
-                className="text-2xl font-semibold mb-6 tracking-tight"
+                className="mb-6 text-2xl font-semibold"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {section.title}
@@ -114,7 +114,7 @@ export default function ProjectPage() {
                 Array.isArray(section.imageUrl) ? (
                   <div className="mb-6 space-y-4">
                     {section.imageUrl.map((url, imgIdx) => (
-                      <div key={imgIdx} className="rounded-2xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
+                      <div key={imgIdx} className="overflow-hidden rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface)]">
                         <img
                           src={url}
                           alt={`${section.title} ${imgIdx + 1}`}
@@ -133,7 +133,7 @@ export default function ProjectPage() {
                     <B2BLeadGenVisual />
                   </div>
                 ) : (
-                  <div className="mb-6 rounded-2xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
+                  <div className="mb-6 overflow-hidden rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface)]">
                     <img
                       src={section.imageUrl}
                       alt={section.title}
@@ -146,7 +146,7 @@ export default function ProjectPage() {
 
               {/* Image placeholder fallback — also above text */}
               {!section.imageUrl && section.imagePlaceholder && (
-                <div className="mb-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] flex items-center justify-center h-64 md:h-80">
+                <div className="mb-6 flex h-64 items-center justify-center rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface-soft)] md:h-80">
                   <div className="text-center">
                     <svg className="w-10 h-10 mx-auto text-[var(--border)] mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -176,9 +176,9 @@ export default function ProjectPage() {
                       href={video.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--foreground)] hover:border-red-500 hover:text-red-500 transition-colors duration-200"
+                      className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-2.5 text-sm font-medium text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface-soft)]"
                     >
-                      <svg className="w-4 h-4" fill="#FF0000" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                       </svg>
                       {video.label}
@@ -196,7 +196,8 @@ export default function ProjectPage() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--foreground)] text-white text-sm font-medium hover:bg-[var(--accent)] transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80"
+                style={{ boxShadow: "var(--shadow-button)" }}
               >
                 {t.projectDetail.visitLiveSite}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +209,7 @@ export default function ProjectPage() {
 
           {/* Confidentiality notice — hidden for non-NDA projects */}
           {slug !== "marketing-automation" && slug !== "rsmedia" && (
-          <div className="mt-12 p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
+          <div className="mt-12 rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface-soft)] p-6">
             <p className="text-xs text-[var(--muted)] leading-relaxed">
               <strong>{t.projectDetail.confidentialityNotice}</strong> {t.projectDetail.confidentialityText}
             </p>
@@ -223,7 +224,7 @@ export default function ProjectPage() {
           <p className="text-xs text-[var(--muted)]">{t.projectDetail.copyright}</p>
           <Link
             href="/#projects"
-            className="text-xs text-[var(--accent)] hover:underline"
+            className="text-xs font-medium text-[var(--foreground)] hover:underline"
           >
             {t.projectDetail.backToAllProjects}
           </Link>

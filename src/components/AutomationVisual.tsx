@@ -93,10 +93,10 @@ export default function AutomationVisual() {
         const x2 = (to.x / 100) * rect.width;
         const y2 = (to.y / 100) * rect.height;
 
-        // Gradient line
+        // Neutral signal line
         const gradient = ctx.createLinearGradient(x1, y1, x2, y2);
-        gradient.addColorStop(0, "rgba(99, 102, 241, 0.12)");
-        gradient.addColorStop(1, "rgba(99, 102, 241, 0.25)");
+        gradient.addColorStop(0, "rgba(0, 0, 0, 0.08)");
+        gradient.addColorStop(1, "rgba(0, 0, 0, 0.2)");
 
         ctx.beginPath();
         ctx.strokeStyle = gradient;
@@ -112,7 +112,7 @@ export default function AutomationVisual() {
         const bx = (1 - pt) ** 3 * x1 + 3 * (1 - pt) ** 2 * pt * cx1 + 3 * (1 - pt) * pt ** 2 * cx2 + pt ** 3 * x2;
         const by = (1 - pt) ** 3 * y1 + 3 * (1 - pt) ** 2 * pt * y1 + 3 * (1 - pt) * pt ** 2 * y2 + pt ** 3 * y2;
         ctx.beginPath();
-        ctx.fillStyle = `rgba(99, 102, 241, ${0.5 + Math.sin(t * 3 + idx) * 0.3})`;
+        ctx.fillStyle = `rgba(0, 0, 0, ${0.35 + Math.sin(t * 3 + idx) * 0.2})`;
         ctx.arc(bx, by, 2.5, 0, Math.PI * 2);
         ctx.fill();
       });
@@ -130,7 +130,7 @@ export default function AutomationVisual() {
   }, []);
 
   return (
-    <div className="relative w-full rounded-2xl border border-[var(--border)] bg-gradient-to-br from-slate-50 to-indigo-50/50 overflow-hidden"
+    <div className="relative w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--border)] bg-white"
          style={{ aspectRatio: "16/9" }}>
       {/* Canvas for animated connections */}
       <canvas
@@ -143,7 +143,7 @@ export default function AutomationVisual() {
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: `radial-gradient(circle, #6366f1 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, #e5e7eb 1px, transparent 1px)`,
           backgroundSize: "24px 24px",
         }}
       />
@@ -155,7 +155,7 @@ export default function AutomationVisual() {
           className="absolute flex flex-col items-center gap-1 transform -translate-x-1/2 -translate-y-1/2 z-10"
           style={{ left: `${node.x}%`, top: `${node.y}%` }}
         >
-          <div className="w-11 h-11 md:w-13 md:h-13 rounded-xl bg-white border border-[var(--border)] shadow-sm flex items-center justify-center text-slate-600 hover:shadow-md hover:border-indigo-300 transition-all duration-300 hover:scale-110">
+          <div className="w-11 h-11 md:h-[52px] md:w-[52px] flex items-center justify-center rounded-[var(--radius-card)] border border-[var(--border)] bg-white text-[var(--muted)] transition-colors duration-200 hover:border-black/20 hover:bg-[var(--surface-soft)]">
             <NodeIcon id={node.id} />
           </div>
           <span className="text-[10px] md:text-xs font-semibold text-[var(--foreground)] whitespace-nowrap mt-0.5">
@@ -166,10 +166,6 @@ export default function AutomationVisual() {
           </span>
         </div>
       ))}
-
-      {/* Subtle glow accents */}
-      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-indigo-400/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-400/8 rounded-full blur-3xl" />
     </div>
   );
 }

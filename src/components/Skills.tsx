@@ -3,27 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const COLOR_MAP: Record<string, { badge: string; glow: string }> = {
-  emerald: {
-    badge:
-      "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-    glow: "from-emerald-500 to-teal-400",
-  },
-  blue: {
-    badge: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-    glow: "from-blue-500 to-indigo-400",
-  },
-  amber: {
-    badge: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-    glow: "from-amber-500 to-orange-400",
-  },
-  violet: {
-    badge:
-      "bg-violet-500/10 text-violet-400 border-violet-500/20",
-    glow: "from-violet-500 to-purple-400",
-  },
-};
-
 interface SkillCard {
   badge: string;
   color: string;
@@ -56,12 +35,12 @@ export default function Skills() {
   const cards: SkillCard[] = t.skills.cards;
 
   return (
-    <section id="about" ref={sectionRef} className="py-16 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="about" ref={sectionRef} className="border-b border-[var(--border)] px-6 py-24">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="fade-in-up mb-6">
+        <div className="fade-in-up mb-10">
           <h2
-            className="text-xl font-semibold tracking-tight"
+            className="text-2xl font-semibold"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t.skills.sectionTitle}
@@ -69,40 +48,32 @@ export default function Skills() {
         </div>
 
         {/* 2×2 Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {cards.map((card, i) => {
-            const colors = COLOR_MAP[card.color] || COLOR_MAP.emerald;
             const isOpen = openIndex === i;
 
             return (
               <button
                 key={i}
                 onClick={() => toggle(i)}
-                className={`relative text-left rounded-xl border backdrop-blur-xl transition-all duration-300 ease-out overflow-hidden cursor-pointer group
+                className={`group relative cursor-pointer overflow-hidden rounded-[var(--radius-card)] border text-left transition-colors duration-200
                   ${
                     isOpen
-                      ? "border-white/15 bg-white/[0.05]"
-                      : "border-white/[0.06] bg-white/[0.025] hover:border-white/[0.13] hover:bg-white/[0.05] hover:-translate-y-0.5"
+                      ? "border-black/20 bg-[var(--surface-soft)]"
+                      : "border-[var(--border)] bg-white hover:border-black/20 hover:bg-[var(--surface-soft)]"
                   }
                 `}
               >
-                {/* Top glow line */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${colors.glow} transition-opacity duration-400 ${
-                    isOpen ? "opacity-60" : "opacity-0 group-hover:opacity-40"
-                  }`}
-                />
-
-                <div className="p-4">
+                <div className="p-5">
                   {/* Badge row */}
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="mb-3 flex items-center justify-between">
                     <span
-                      className={`text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md border ${colors.badge}`}
+                      className="text-[11px] font-medium uppercase text-[var(--muted)]"
                     >
                       {card.badge}
                     </span>
                     <span
-                      className={`w-[18px] h-[18px] rounded-full border border-white/[0.08] flex items-center justify-center transition-transform duration-300 group-hover:border-white/[0.15]
+                      className={`flex h-[22px] w-[22px] items-center justify-center rounded-full border border-black/10 bg-white transition-transform duration-300
                         ${isOpen ? "rotate-45" : ""}
                       `}
                     >
@@ -119,23 +90,23 @@ export default function Skills() {
                   </div>
 
                   {/* One-liner */}
-                  <p className="text-[13px] font-medium leading-snug text-[var(--foreground)]">
+                  <p className="text-sm font-medium leading-snug text-[var(--foreground)]">
                     {card.oneLiner}
                   </p>
 
                   {/* Expandable tags */}
                   <div
-                    className="grid transition-[grid-template-rows] duration-400 ease-out"
+                    className="grid transition-[grid-template-rows] duration-300 ease-out"
                     style={{
                       gridTemplateRows: isOpen ? "1fr" : "0fr",
                     }}
                   >
                     <div className="overflow-hidden">
-                      <div className="flex flex-wrap gap-1.5 pt-3 mt-3 border-t border-white/[0.06]">
+                      <div className="mt-4 flex flex-wrap gap-1.5 border-t border-[var(--border)] pt-4">
                         {card.tags.map((tag: string, j: number) => (
                           <span
                             key={j}
-                            className="text-[10.5px] font-normal px-2.5 py-1 rounded-md bg-white/[0.035] border border-white/[0.06] text-[var(--muted)] whitespace-nowrap"
+                            className="whitespace-nowrap rounded-full border border-black/10 bg-white px-2.5 py-1 text-[11px] font-normal text-[var(--muted)]"
                           >
                             {tag}
                           </span>

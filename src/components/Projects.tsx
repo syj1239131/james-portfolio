@@ -2,7 +2,21 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage, useProjectList } from "@/context/LanguageContext";
+
+const PROJECT_COVERS: Record<string, string> = {
+  "b2b-lead-gen": "/jazz-hipster-product.jpeg",
+  "marketing-automation": "/cover-martech-ai.webp",
+  "jazz-hipster-seo": "/cover-seo-engine.webp",
+  "brand-transformation": "/senseage-brand.png",
+  "richart-social-media": "/richart-mascot.jpg",
+  rsmedia: "/cover-news-engine.webp",
+};
+
+const PROJECT_COVER_POSITIONS: Record<string, string> = {
+  rsmedia: "34% center",
+};
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -31,15 +45,15 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-16 px-6">
+    <section id="projects" ref={sectionRef} className="border-b border-[var(--border)] px-6 py-24">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="fade-in-up mb-16">
-          <p className="text-sm tracking-widest uppercase text-[var(--accent)] mb-2">
+          <p className="mb-2 text-[13px] font-medium uppercase text-[var(--muted)]">
             {t.projects.sectionLabel}
           </p>
           <h2
-            className="text-3xl md:text-4xl font-bold tracking-tight"
+            className="text-3xl font-semibold md:text-4xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t.projects.sectionTitle}
@@ -52,37 +66,47 @@ export default function Projects() {
             <Link
               href={`/projects/${project.slug}`}
               key={i}
-              className="fade-in-up card-hover rounded-2xl border border-[var(--border)] bg-white p-8 flex flex-col group cursor-pointer"
+              className="fade-in-up group flex flex-col"
             >
+              <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface-soft)]">
+                <Image
+                  src={PROJECT_COVERS[project.slug]}
+                  alt={project.title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+
               {/* Tag */}
-              <span className="text-xs font-medium tracking-wide uppercase text-[var(--accent)] mb-3">
+              <span className="mb-3 text-[13px] font-medium uppercase text-[var(--muted)]">
                 {project.tag}
               </span>
 
               {/* Title */}
               <h3
-                className="text-xl font-semibold mb-1 tracking-tight group-hover:text-[var(--accent)] transition-colors"
+                className="mb-2 text-[22px] font-semibold leading-[1.22] text-[var(--foreground)] group-hover:underline group-hover:underline-offset-4"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {project.title}
               </h3>
 
               {/* Company */}
-              <p className="text-sm text-[var(--muted)] mb-4">
+              <p className="mb-4 text-sm text-[var(--muted)]">
                 {project.company}
               </p>
 
               {/* Description */}
-              <p className="text-sm text-[var(--muted)] leading-relaxed mb-6 flex-1">
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-[var(--muted)]">
                 {project.description}
               </p>
 
               {/* Metrics */}
-              <div className="flex flex-wrap gap-6 mb-4">
+              <div className="mb-4 flex flex-wrap gap-6 border-t border-[var(--border)] pt-5">
                 {project.metrics.map((m, j) => (
-                  <div key={j} className="text-center">
+                  <div key={j}>
                     <p
-                      className="text-2xl font-bold text-[var(--foreground)]"
+                      className="text-2xl font-semibold text-[var(--foreground)]"
                       style={{ fontFamily: "var(--font-heading)" }}
                     >
                       {m.value}
@@ -95,7 +119,7 @@ export default function Projects() {
               </div>
 
               {/* CTA */}
-              <span className="text-sm text-[var(--accent)] mt-2 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-[var(--foreground)] group-hover:gap-2 group-hover:underline group-hover:underline-offset-4 transition-all">
                 {t.projects.viewCaseStudy}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -109,63 +133,76 @@ export default function Projects() {
         {secondaryProjects.length > 0 && (
           <>
             <div className="fade-in-up flex items-center gap-4 mt-14 mb-8">
-              <div className="flex-1 border-t border-dashed border-[var(--border)]" />
-              <span className="text-xs tracking-widest uppercase text-[var(--muted)] whitespace-nowrap">
+              <div className="flex-1 border-t border-[var(--border)]" />
+              <span className="whitespace-nowrap text-xs font-medium uppercase text-[var(--muted)]">
                 {t.projects.secondaryLabel}
               </span>
-              <div className="flex-1 border-t border-dashed border-[var(--border)]" />
+              <div className="flex-1 border-t border-[var(--border)]" />
             </div>
 
             {/* Secondary Projects Grid — compact cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
               {secondaryProjects.map((project, i) => (
                 <Link
                   href={`/projects/${project.slug}`}
                   key={i}
-                  className="fade-in-up card-hover rounded-xl border border-dashed border-[var(--border)] bg-[var(--background)] p-5 flex flex-col group cursor-pointer opacity-90 hover:opacity-100 transition-opacity"
+                  className="fade-in-up group grid grid-cols-[96px_1fr] gap-4 border-t border-[var(--border)] py-6 sm:grid-cols-[128px_1fr]"
                 >
-                  {/* Tag */}
-                  <span className="text-[10px] font-medium tracking-wide uppercase text-[var(--muted)] mb-2">
-                    {project.tag}
-                  </span>
-
-                  {/* Title */}
-                  <h3
-                    className="text-base font-semibold mb-1 tracking-tight group-hover:text-[var(--accent)] transition-colors"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    {project.title}
-                  </h3>
-
-                  {/* Company */}
-                  <p className="text-xs text-[var(--muted)] mb-3">
-                    {project.company}
-                  </p>
-
-                  {/* Compact Metrics */}
-                  <div className="flex flex-wrap gap-4 mb-3">
-                    {project.metrics.map((m, j) => (
-                      <div key={j} className="text-center">
-                        <p
-                          className="text-lg font-bold text-[var(--foreground)]"
-                          style={{ fontFamily: "var(--font-heading)" }}
-                        >
-                          {m.value}
-                        </p>
-                        <p className="text-[10px] text-[var(--muted)] mt-0.5">
-                          {m.label}
-                        </p>
-                      </div>
-                    ))}
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface-soft)]">
+                    <Image
+                      src={PROJECT_COVERS[project.slug]}
+                      alt={project.title}
+                      fill
+                      sizes="128px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      style={{ objectPosition: PROJECT_COVER_POSITIONS[project.slug] ?? "center" }}
+                    />
                   </div>
 
-                  {/* CTA */}
-                  <span className="text-xs text-[var(--accent)] mt-1 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t.projects.viewCaseStudy}
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
+                  <div className="min-w-0">
+                    {/* Tag */}
+                    <span className="mb-2 block text-[11px] font-medium uppercase text-[var(--muted)]">
+                      {project.tag}
+                    </span>
+
+                    {/* Title */}
+                    <h3
+                      className="mb-1 text-base font-semibold text-[var(--foreground)] group-hover:underline group-hover:underline-offset-4"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      {project.title}
+                    </h3>
+
+                    {/* Company */}
+                    <p className="text-xs text-[var(--muted)] mb-3">
+                      {project.company}
+                    </p>
+
+                    {/* Compact Metrics */}
+                    <div className="flex flex-wrap gap-4 mb-3">
+                      {project.metrics.map((m, j) => (
+                        <div key={j}>
+                          <p
+                            className="text-lg font-semibold text-[var(--foreground)]"
+                            style={{ fontFamily: "var(--font-heading)" }}
+                          >
+                            {m.value}
+                          </p>
+                          <p className="text-[10px] text-[var(--muted)] mt-0.5">
+                            {m.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA */}
+                    <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-[var(--foreground)] group-hover:gap-2 group-hover:underline group-hover:underline-offset-4 transition-all">
+                      {t.projects.viewCaseStudy}
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>

@@ -22,25 +22,28 @@ export default function Hero() {
   }, [roles.length]);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-16">
-      <div className="max-w-3xl text-center">
+    <section className="flex items-center justify-center border-b border-[var(--border)] px-6 pt-32 pb-20 md:pt-44 md:pb-32">
+      <div
+        className="text-center"
+        style={{ width: "min(100%, calc(100vw - 48px))", maxWidth: "56rem" }}
+      >
         {/* Greeting */}
-        <p className="text-sm tracking-widest uppercase text-[var(--muted)] mb-4">
+        <p className="mb-5 text-[13px] font-medium uppercase text-[var(--muted)]">
           {t.hero.greeting}
         </p>
 
         {/* Name */}
         <h1
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          className="mb-6 text-5xl font-semibold leading-[1.03] md:text-7xl"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           {t.hero.name}
         </h1>
 
         {/* Rotating role */}
-        <div className="h-10 flex items-center justify-center mb-8">
+        <div className="mb-8 flex min-h-10 items-center justify-center">
           <span
-            className={`text-xl md:text-2xl font-medium text-[var(--accent)] transition-opacity duration-400 ${
+            className={`rounded-full border border-[var(--border)] px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-opacity duration-300 md:text-base ${
               fade ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -49,7 +52,7 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <p className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-xl mx-auto mb-10">
+        <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-[var(--muted)] md:text-[17px]">
           {t.hero.subtitle}
         </p>
 
@@ -57,14 +60,15 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="#projects"
-            className="w-full sm:w-auto px-6 py-3 rounded-full bg-[var(--foreground)] text-white text-sm font-medium hover:bg-[var(--accent)] transition-colors duration-200 text-center"
+            className="w-full rounded-full bg-[var(--foreground)] px-6 py-3 text-center text-sm font-medium text-white transition-opacity duration-200 hover:opacity-80 sm:w-auto"
+            style={{ boxShadow: "var(--shadow-button)" }}
           >
             {t.hero.viewWorkButton}
           </a>
           <a
             href={t.navbar.resumeUrl}
             download
-            className="w-full sm:w-auto px-6 py-3 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-200 inline-flex items-center justify-center gap-2"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/10 px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface-soft)] sm:w-auto"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -73,16 +77,16 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="w-full sm:w-auto px-6 py-3 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-200 text-center"
+            className="w-full rounded-full border border-black/10 px-6 py-3 text-center text-sm font-medium text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface-soft)] sm:w-auto"
           >
             {t.hero.contactButton}
           </a>
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-16 animate-bounce">
+        <div className="mt-16">
           <svg
-            className="w-5 h-5 mx-auto text-[var(--muted)]"
+            className="mx-auto h-5 w-5 text-[var(--muted)]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
