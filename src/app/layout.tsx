@@ -4,13 +4,13 @@ import { ClientBody } from "./ClientBody";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://james-portfolio-roan.vercel.app"),
-  title: "James Hsieh — Marketing Portfolio",
+  title: "James Hsieh — Digital Marketing & MarTech Portfolio",
   description:
-    "Portfolio of James Hsieh (謝宇傑) — Senior Marketing Specialist specializing in SEO, growth marketing, content strategy, and data-driven campaign execution.",
+    "Marketing portfolio of James Hsieh, a digital marketing and MarTech specialist with experience in B2B lead generation, CRM and marketing automation, AI-assisted workflows, content systems, and data-driven campaign execution.",
   openGraph: {
-    title: "James Hsieh — Marketing Portfolio",
+    title: "James Hsieh — Digital Marketing & MarTech Portfolio",
     description:
-      "Senior Marketing Specialist specializing in SEO, growth marketing, content strategy, and data-driven campaign execution.",
+      "Digital marketing and MarTech portfolio covering B2B lead generation, CRM and marketing automation, AI-assisted workflows, content systems, and data-driven campaign execution.",
     url: "https://james-portfolio-roan.vercel.app",
     siteName: "James Hsieh Portfolio",
     images: [
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "James Hsieh — Marketing Portfolio",
+    title: "James Hsieh — Digital Marketing & MarTech Portfolio",
     description:
-      "Senior Marketing Specialist specializing in SEO, growth marketing, and content strategy.",
+      "Digital marketing and MarTech portfolio covering B2B lead generation, CRM automation, AI-assisted workflows, and content systems.",
     images: ["/thumbnail.png"],
   },
 };

@@ -35,11 +35,12 @@ export const translations = {
     greeting: "Hello, I'm",
     name: "James Hsieh", // [KEEP or 謝宇傑]
     roles: [
-      "Growth Marketer",
-      "SEO Strategist",
-      "Marketing Technologist",
+      "Digital Marketing",
+      "MarTech x AI",
+      "CRM & Automation",
+      "B2B Lead Generation",
     ],
-    subtitle: "7 years in SEO, growth marketing, and B2B inbound. I also happen to code — Python, React, and whatever else gets the job done faster.",
+    subtitle: "7 years across digital marketing, B2B inbound, and CRM/MarTech. I turn content, data, automation, and AI-assisted workflows into practical marketing systems for pipeline, reporting, and cross-team execution.",
     viewWorkButton: "View My Work",
     downloadResumeButton: "Download Resume",
     contactButton: "Contact Me",
@@ -53,28 +54,28 @@ export const translations = {
     sectionTitle: "Skills & Expertise",
     cards: [
       {
-        badge: "B2B & Lead Gen",
+        badge: "Digital Marketing & Growth",
         color: "blue",
-        oneLiner: "Inbound marketing, LinkedIn thought leadership, lead nurture",
-        tags: ["B2B Inbound Marketing", "LinkedIn B2B", "Email Marketing (EDM)", "Lead Nurturing", "Marketing Automation"],
+        oneLiner: "B2B inbound, lead generation, and conversion funnel execution",
+        tags: ["B2B Inbound", "Lead Generation", "LinkedIn B2B", "Email / Lead Nurturing", "Conversion Funnel", "SEO / Content Growth"],
       },
       {
-        badge: "Growth & SEO",
-        color: "emerald",
-        oneLiner: "Organic acquisition, technical SEO, content that compounds",
-        tags: ["Technical SEO", "Content SEO & EEAT", "Keyword & Competitive Analysis", "International SEO (EN/ZH)", "GA4", "Google Search Console", "A/B Testing & CRO"],
-      },
-      {
-        badge: "Social & Brand",
-        color: "amber",
-        oneLiner: "Community campaigns, IP storytelling, cross-platform execution",
-        tags: ["Social Media (Meta, IG, LinkedIn)", "IP & Community Marketing", "Brand Positioning", "Content Strategy & Editorial", "O2O Campaigns", "Digital Advertising"],
-      },
-      {
-        badge: "MarTech & Code",
+        badge: "MarTech x AI",
         color: "violet",
-        oneLiner: "Python, React/Next.js — I build what I need, not just brief it",
-        tags: ["Python", "React / Next.js / TypeScript", "AI / LLM Workflows", "WordPress", "ETL & Data Pipelines", "Automation Scripts"],
+        oneLiner: "Applying generative AI and tooling to content, analysis, and execution workflows",
+        tags: ["Generative AI", "Claude Code", "Codex", "Cursor", "VS Code", "Antigravity", "AI Workflows", "Marketing Automation"],
+      },
+      {
+        badge: "CRM, Data & Automation",
+        color: "emerald",
+        oneLiner: "Audience segmentation, lifecycle communication, reporting, and lead handoff",
+        tags: ["HubSpot", "CRM / CDP Concepts", "Audience Segmentation", "Lifecycle Communication", "GA4 / GSC", "Python Reporting", "MQL / Lead Handoff"],
+      },
+      {
+        badge: "Brand, Content & Social",
+        color: "amber",
+        oneLiner: "Large-brand communication, compliance-aware content, and cross-platform campaigns",
+        tags: ["Large Brand Social", "Financial Brand Communication", "Compliance-aware Content", "IP Marketing", "O2O Campaigns", "Content Marketing"],
       },
     ],
   },
@@ -86,7 +87,7 @@ export const translations = {
     sectionLabel: "Selected Work",
     sectionTitle: "Projects & Case Studies",
     viewCaseStudy: "View Case Study",
-    secondaryLabel: "Side Projects & Technical Work",
+    secondaryLabel: "Brand & Content Operations",
   },
 
   // ==========================================
@@ -182,10 +183,10 @@ export const translations = {
   // ==========================================
   projectData: {
     "jazz-hipster-seo": {
-      tag: "SEO / Content Strategy",
-      title: "Driving 658% Organic Search Growth",
+      tag: "Growth Infrastructure / Organic Growth",
+      title: "Turning SEO into Growth Infrastructure",
       company: "Jazz Hipster — B2B Audio ODM",
-      description: "I ran a dual-track SEO strategy at a B2B audio manufacturer: expert content for niche authority, mainstream articles for traffic volume. Rebuilt the site UX, fixed technical SEO, and coordinated engineers, writers, and stakeholders.",
+      description: "I rebuilt site structure, content systems, technical SEO, and cross-team workflows, driving 658% organic search growth while turning SEO from an outsourced task into a long-term growth foundation.",
       metrics: [
         { value: "+658%", label: "Organic Search" },
         { value: "+263%", label: "New Users" },
@@ -197,18 +198,17 @@ export const translations = {
         {
           title: "Situation",
           content: [
-            "Jazz Hipster is a Taiwan-based OEM/ODM manufacturer of audio and speaker products. The website targeted global B2B customers but had almost no organic visibility.",
-            "Previous SEO work by external contractors didn't move the needle. Internally, there was no alignment between content, technical, and channel teams, and nobody could agree on whether the site should target broad audiences or professional B2B buyers.",
+            "Jazz Hipster is a Taiwan-based OEM/ODM manufacturer of audio and speaker products. The website targeted global B2B customers, but organic visibility and content structure were weak.",
+            "Previous SEO work by external contractors did not move the needle. Internally, there was no shared workflow across content, technical, data, and channel teams.",
           ],
         },
         {
           title: "Action",
           content: [
-            "I built two parallel content tracks: expert B2B articles (OEM processes, acoustic engineering topics) for niche authority, and mainstream consumer-interest articles (electronics, lifestyle, audio guides) for traffic volume.",
-            "I audited and restructured the entire site: fixed H-tag hierarchy, built pillar pages, redesigned navigation, and improved content flow for both search engines and users.",
-            "I set up internal linking between technical and general articles to build topical authority and diversify search entry points.",
-            "On the technical side: migrated hosting to handle international traffic, improved page speed and mobile responsiveness, and cleaned up robots.txt, sitemap.xml, and metadata.",
-            "I also managed the team side. I coordinated technical writers and backend engineers, and trained the internal team on EEAT principles and content production workflows.",
+            "I reframed organic growth as content systems, site architecture, technical fixes, GA4/GSC tracking, and cross-team workflow instead of treating SEO as an outsourced checklist.",
+            "I restructured navigation, H-tags, pillar pages, metadata, robots.txt, sitemap.xml, and mobile experience so both search engines and B2B buyers could understand the site more clearly.",
+            "I built bilingual content themes and internal linking flows that connected OEM/ODM technical articles, product knowledge, and broader audio content into one compounding system.",
+            "I coordinated technical writers, engineers, and internal stakeholders, then used GA4/GSC to track the impact of content and site changes.",
           ],
         },
         {
@@ -216,17 +216,17 @@ export const translations = {
           content: [
             "Organic impressions grew 658%. New users increased 263% overall, and 384% on the English site.",
             "73 keywords actively ranking. 10 new SEO-optimized articles published.",
-            "The internal team started treating SEO as a real growth channel, which led to further investment in digital marketing.",
+            "The company started treating organic growth as long-term infrastructure, not a one-off SEO task.",
           ],
         },
       ],
     },
 
     "b2b-lead-gen": {
-      tag: "B2B Lead Generation / LinkedIn",
-      title: "Global B2B Inbound Lead Generation",
+      tag: "B2B Lead Generation / Inbound Engine",
+      title: "Building a Global B2B Inbound Lead Engine",
       company: "Jazz Hipster — B2B Audio ODM",
-      description: "I built Jazz Hipster's first inbound marketing system from scratch: LinkedIn content strategy, email marketing platform, and a website-to-lead pipeline. The result was Tier-1 global brands reaching out to us instead of the other way around.",
+      description: "I connected the website, LinkedIn, email marketing, and lead handoff into Jazz Hipster's first repeatable B2B inbound system, generating inquiries from Tier-1 brands across Europe, North America, and the Middle East.",
       metrics: [
         { value: "Tier-1", label: "Global Brand Inquiries" },
         { value: "+135%", label: "LinkedIn Growth" },
@@ -238,34 +238,34 @@ export const translations = {
         {
           title: "Situation",
           content: [
-            "Jazz Hipster had no inbound marketing infrastructure at all. Business development relied on trade shows and existing relationships. There was no email marketing system and the LinkedIn page was barely active.",
-            "The goal was to build digital channels that bring prospects to us, which is a fundamentally different approach from the cold outreach that's standard in audio manufacturing.",
+            "Jazz Hipster relied mostly on trade shows, relationships, and sales outreach. There was no repeatable digital lead generation process, and the website, LinkedIn, email, and sales handoff were not working as one system.",
+            "My job was to connect content, social reach, lead nurturing, and sales follow-up into B2B inbound infrastructure that could keep compounding.",
           ],
         },
         {
           title: "Action",
           content: [
-            "I developed a LinkedIn content strategy around industry insights, product innovation stories, and manufacturing expertise to position the company as a knowledge leader in professional audio.",
-            "I evaluated and implemented the company's first EDM platform, setting up the infrastructure for lead nurturing and client communication from scratch.",
-            "I connected the dots between SEO, LinkedIn content, and email outreach so they worked as one system: the website builds authority, LinkedIn drives awareness, and email nurtures leads.",
+            "I translated the company's audio OEM/ODM capabilities into content themes that worked across LinkedIn and the website: industry insight, manufacturing know-how, product innovation, and buyer questions.",
+            "I launched the company's first email marketing and lead nurturing workflow, so prospects from the website and LinkedIn could be followed up consistently instead of sitting in one-off forms or manual tracking.",
+            "I connected SEO, LinkedIn, email, and lead handoff into one conversion flow: the website built trust, LinkedIn expanded reach, email nurtured prospects, and sales followed up with high-intent inquiries.",
           ],
         },
         {
           title: "Result",
           content: [
-            "LinkedIn followers grew 135%.",
-            "We started receiving inbound inquiries from Tier-1 audio brands in Europe, North America, and the Middle East. These were companies that would normally require trade show meetings or cold outreach to even get on their radar.",
-            "Built the company's first scalable email marketing system from zero.",
+            "LinkedIn followers grew 135%, giving the company a B2B digital channel it could keep building over time.",
+            "Tier-1 audio brands from Europe, North America, and the Middle East started reaching out inbound. These were accounts that normally required trade shows or existing relationships to reach.",
+            "Digital marketing became connected to lead nurturing and sales conversations, not just awareness.",
           ],
         },
       ],
     },
 
     "richart-social-media": {
-      tag: "Social Media / IP Marketing",
-      title: "Award-Winning Social Media for 10+ Premium Brands",
+      tag: "Large Brand Social / Compliance Communication",
+      title: "Large-Brand Social and Compliance-Aware Communication",
       company: "Spring Tree Technology — Agency",
-      description: "I managed social media for 10+ major brands at a digital agency, including Richart (Taishin Bank), CTBC Bank, Carrefour, Family Mart, McDonald's, KYMCO, and 17LIVE. Won Gold at the Brain Communication Awards.",
+      description: "At a digital agency, I managed social strategy for 10+ major brands including Richart, CTBC Bank, Carrefour, Family Mart, McDonald's, KYMCO, and 17LIVE, working across financial compliance, multi-level approvals, and IP-led communication.",
       metrics: [
         { value: "10+", label: "Premium Brands" },
         { value: "1.5M", label: "Campaign Reach" },
@@ -286,8 +286,8 @@ export const translations = {
           content: [
             "I built campaigns around the Richart dog mascot IP: storylines, memes, and interactive content designed to feel native to younger audiences rather than corporate.",
             "I ran the annual 'Richart Birthday' O2O events, including UGC activations that collected 1,000+ fan-submitted photos and cross-channel content themes.",
-            "I adapted content strategies for Facebook and Instagram separately, using trending formats while staying within compliance guardrails.",
-            "I applied the same engagement frameworks across all managed brands: CTBC Bank, Carrefour, Family Mart, McDonald's, KYMCO, and 17LIVE.",
+            "I adapted content strategies for Facebook and Instagram separately, keeping content fast and engaging while working through financial compliance, multi-level approvals, and brand voice limits.",
+            "I applied the same content collaboration framework across all managed brands: CTBC Bank, Carrefour, Family Mart, McDonald's, KYMCO, and 17LIVE.",
           ],
         },
         {
@@ -303,10 +303,10 @@ export const translations = {
     },
 
     "brand-transformation": {
-      tag: "Growth Marketing",
-      title: "Amazon to Omnichannel Brand Transformation",
+      tag: "Omnichannel Growth / Brand Transformation",
+      title: "From Amazon Dependency to Omnichannel Growth",
       company: "SenseAge — Consumer Electronics",
-      description: "SenseAge sold consumer electronics exclusively through Amazon. I built their independent brand presence: Shopify site, Google Ads, organic search strategy, and a consistent brand identity across channels.",
+      description: "I helped SenseAge build Shopify, Google Ads, organic search, and consistent brand messaging, moving the business from single-platform dependence toward a more durable omnichannel model.",
       metrics: [
         { value: "5x", label: "Revenue Growth" },
         { value: "+200%", label: "Web Traffic" },
@@ -323,9 +323,9 @@ export const translations = {
         {
           title: "Action",
           content: [
-            "I built the brand's first Shopify storefront and set up Google Ads campaigns (Search + Shopping) to drive traffic to it.",
+            "I built the brand's first Shopify storefront and set up Google Ads campaigns, conversion tracking, and channel-level performance checks.",
             "I developed an organic search strategy with product-focused content and basic technical SEO to reduce long-term dependence on paid ads.",
-            "I created a consistent brand identity (visual language, messaging, product positioning) that worked across Amazon, the website, and ad creatives.",
+            "I created consistent brand identity, messaging, and product positioning across Amazon, the website, DTC channels, and ad creatives.",
           ],
         },
         {
@@ -339,56 +339,54 @@ export const translations = {
     },
 
     "marketing-automation": {
-      tag: "Technical Marketing",
-      title: "Marketing Automation & Technical Toolkit",
+      tag: "MarTech x AI / Marketing Automation",
+      title: "MarTech x AI Marketing Toolkit",
       company: "Cross-Project",
-      description: "I build the tools I need. Python scripts for reporting automation, AI workflows for content operations, and full-stack web apps with React/Next.js. This is a snapshot of the technical side of my marketing work.",
+      description: "I apply GA4/GSC data, Python reporting, AI workflows, and React/Next.js prototypes to make content, analysis, reporting, and internal tools move faster from idea to execution.",
       metrics: [
         { value: "Python", label: "Automation & ETL" },
         { value: "React", label: "Next.js / TypeScript" },
         { value: "AI", label: "Workflow Automation" },
       ],
-      role: "Marketing Technologist",
+      role: "Digital Marketing / MarTech Implementation",
       period: "Ongoing",
       sections: [
         {
           title: "Overview",
           content: [
-            "I build my own tools instead of waiting for someone else to build them. This page shows what that looks like in practice.",
+            "When the process allows it, I use Python, AI tools, and frontend frameworks directly in marketing workflows to shorten the time spent on content, reporting, data cleanup, and prototype testing.",
+            "These skills help marketing teams test ideas faster, produce cleaner data, and communicate technical requirements with less friction.",
           ],
         },
         {
-          title: "Python Automation & Data Pipelines",
+          title: "Data and Reporting Automation",
           content: [
-            "GA4 Report Automation: Python scripts using the Google Analytics Data API to pull, process, and format performance data into reports. Cuts hours of manual spreadsheet work.",
-            "ETL Pipelines: Automated data extraction, transformation, and loading across multiple marketing platforms.",
-            "Web Scraping: Custom scrapers for market research, pricing analysis, and content gap identification.",
+            "I use Python to pull and clean GA4 / GSC data into repeatable marketing reports, cutting down manual spreadsheet work.",
+            "For market research, competitor tracking, and content gap analysis, I build scrapers and cleanup flows that can be reused instead of rebuilt each time.",
           ],
         },
         {
-          title: "AI Workflow Automation",
+          title: "AI-Assisted Workflows",
           content: [
-            "LLM-Integrated Content Pipelines: Workflows using large language models for content drafting, translation, and optimization at scale, with human review baked in.",
-            "AI Agent Systems: Multi-step agent workflows for research, data analysis, and automated reporting.",
-            "Prompt Engineering: Systematic prompt frameworks for consistent AI-assisted output across marketing tasks.",
+            "I use Claude Code, Codex, Cursor, VS Code, and Antigravity for content operations, data analysis, internal tool prototypes, and marketing process documentation. It goes beyond basic ChatGPT copy generation.",
+            "AI output stays inside a human review process, so tone, facts, brand constraints, and business goals are checked before anything ships.",
           ],
         },
         {
-          title: "Full-Stack Web Development",
+          title: "Web and Internal Tool Prototypes",
           content: [
-            "React / Next.js / TypeScript: Production web apps including this portfolio site, marketing dashboards, and internal tools.",
-            "WordPress: End-to-end site builds with schema markup and performance optimization.",
-            "Marketing Automation: Integrated email platforms, CRM systems, and analytics tools into automated workflows.",
+            "I use React / Next.js / TypeScript to build production websites and prototypes, including this portfolio, marketing dashboards, and internal tool concepts.",
+            "I also work with WordPress, Shopify, schema basics, and performance optimization, which helps me translate marketing needs into clearer technical specs.",
           ],
         },
       ],
     },
 
     "rsmedia": {
-      tag: "SEO / Independent Project",
-      title: "Independent News Platform",
+      tag: "Independent Content Operation",
+      title: "Independent Content Platform and Search Growth System",
       company: "Independent Project",
-      description: "I co-founded a Mandarin news site with a small team. We earned Bing News publisher certification, published 1,200+ articles in 9 months, and hit 1.8M Bing impressions.",
+      description: "I co-founded a Mandarin news site and built the WordPress setup, schema, editorial workflow, and search growth system, publishing 1,200+ articles in 9 months and earning Bing News publisher certification.",
       metrics: [
         { value: "1.8M", label: "Bing Impressions" },
         { value: "61.4K", label: "Organic Clicks" },

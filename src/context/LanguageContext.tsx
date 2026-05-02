@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useSyncExternalStore, ReactNode } from "react";
 import { translations as en } from "@/data/en";
 import { translations as zh } from "@/data/zh";
 import { projects } from "@/data/projects";
@@ -28,34 +28,44 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 // Provider
 // ============================================================
 const STORAGE_KEY = "portfolio-lang";
+const LANGUAGE_CHANGE_EVENT = "portfolio-lang-change";
+
+function getStoredLanguage(): Language {
+  if (typeof window === "undefined") return "en";
+
+  const saved = window.localStorage.getItem(STORAGE_KEY);
+  return saved === "en" || saved === "zh" ? saved : "en";
+}
+
+function subscribeToLanguageStore(onStoreChange: () => void) {
+  if (typeof window === "undefined") return () => {};
+
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener(LANGUAGE_CHANGE_EVENT, onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener(LANGUAGE_CHANGE_EVENT, onStoreChange);
+  };
+}
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Language>("en");
-  const [mounted, setMounted] = useState(false);
-
-  // Read saved language on mount
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as Language | null;
-    if (saved && (saved === "en" || saved === "zh")) {
-      setLangState(saved);
-    }
-    setMounted(true);
-  }, []);
+  const lang = useSyncExternalStore<Language>(
+    subscribeToLanguageStore,
+    getStoredLanguage,
+    () => "en"
+  );
 
   const setLang = (newLang: Language) => {
-    setLangState(newLang);
-    localStorage.setItem(STORAGE_KEY, newLang);
+    window.localStorage.setItem(STORAGE_KEY, newLang);
+    window.dispatchEvent(new Event(LANGUAGE_CHANGE_EVENT));
   };
 
   const t = translationMap[lang];
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
-      {!mounted ? (
-        <div style={{ visibility: "hidden" }}>{children}</div>
-      ) : (
-        children
-      )}
+      {children}
     </LanguageContext.Provider>
   );
 }
